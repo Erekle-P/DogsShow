@@ -7,7 +7,8 @@ const detailBreed = document.querySelector('#breed-display');
 const detailWeight = document.querySelector('#weight-display');
 const dogForm = document.querySelector('#new-dog');
 const sortBySelect = document.querySelector('#sortBy');
-const dogListDiv = document.querySelector('#dogList');
+const sortButton = document.querySelector('#sortButton');
+const sortedBanner = document.querySelector('#sortedBanner');
 
 // Fetch dog data from db.json
 const fetchDogs = async () => {
@@ -29,7 +30,7 @@ const handleClick = (dog) => {
 };
 
 // Function to create a new dog card and append to the banner
-const createDogCard = (dog) => {
+const createDogCard = (dog, container) => {
   const cardDiv = document.createElement('div');
   cardDiv.classList.add('card');
   cardDiv.innerHTML = `
@@ -39,54 +40,45 @@ const createDogCard = (dog) => {
   `;
 
   cardDiv.addEventListener('click', () => handleClick(dog));
-  banner.appendChild(cardDiv);
+  container.appendChild(cardDiv);
 };
 
 // Function to display all dogs
 const displayDogs = (dogs) => {
   banner.innerHTML = ''; // Clear existing dogs
-  dogs.forEach((dog) => createDogCard(dog));
+  dogs.forEach((dog) => createDogCard(dog, banner));
   if (dogs.length > 0) {
     handleClick(dogs[0]); // Display the first dog as default
   }
 };
 
-// Function to handle form submission for adding new dogs
-const handleFormSubmit = (e) => {
-  e.preventDefault();
-
-  const newDog = {
-    id: dogs.length + 1, // Unique ID for the new dog
-    breed: dogForm['new-breed'].value,
-    weight: dogForm['new-weight'].value,
-    image: dogForm['new-image'].value,
-    lifespan: dogForm['new-life-span'].value,
-    coat_type: dogForm['new-size'].value,
-    size: dogForm['new-size'].value,
-  };
-
-  // Assuming you can push the new dog data to the array or DB
-  dogs.push(newDog);
-
-  createDogCard(newDog);
-  dogForm.reset();
-};
-
 // Function to sort dogs by selected criteria (weight or age)
-const sortDogs = () => {
-  const sortedDogs = [...dogs]; // Copy dogs array to not mutate original
-  const sortBy = sortBySelect.value;
-
+const sortDogs = (dogs, criteria) => {
+  const sortedDogs = [...dogs]; // Copy dogs array to avoid mutating the original
+  
   sortedDogs.sort((a, b) => {
-    if (sortBy === 'weight') {
+    if (criteria === 'weight') {
       return parseFloat(a.weight.split('-')[0]) - parseFloat(b.weight.split('-')[0]); // Sort by weight (lower end of the range)
-    } else if (sortBy === 'age') {
+    } else if (criteria === 'age') {
       return parseFloat(a.lifespan.split('-')[0]) - parseFloat(b.lifespan.split('-')[0]); // Sort by lifespan (lower end of the range)
     }
     return 0;
   });
 
-  displayDogs(sortedDogs);
+  return sortedDogs;
+};
+
+// Function to display sorted dogs
+const displaySortedDogs = (dogs) => {
+  sortedBanner.innerHTML = ''; // Clear existing dogs
+  dogs.forEach((dog) => createDogCard(dog, sortedBanner));
+};
+
+// Function to handle the sorting form submission
+const handleSortSubmit = () => {
+  const sortBy = sortBySelect.value; // Get the selected sorting option
+  const sortedDogs = sortDogs(dogs, sortBy); // Sort dogs based on selection
+  displaySortedDogs(sortedDogs); // Display sorted dogs
 };
 
 // Initialize the app
@@ -97,11 +89,8 @@ const initializeApp = async () => {
   // Display dogs on page
   displayDogs(dogs);
 
-  // Attach form submit listener
-  dogForm.addEventListener('submit', handleFormSubmit);
-
-  // Attach sort change listener
-  sortBySelect.addEventListener('change', sortDogs);
+  // Attach sort submit listener
+  sortButton.addEventListener('click', handleSortSubmit);
 };
 
 // Start the application
