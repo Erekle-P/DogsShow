@@ -13,8 +13,8 @@
 
 .dog-show .card {
     width: 200px;
-    height: 300px;
-    margin: 10px;
+    height: 150px;
+    margin: 2.5px;
     cursor: pointer;
     border-radius: 12px;
     transition: all 0.3s ease-in-out;
@@ -94,3 +94,43 @@ form {
     background-color: rgb(21, 177, 57);
   }
   
+
+
+h1 {
+    text-align: center;
+}
+
+#sortBy {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#dogList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.child {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.child h3 {
+    margin: 10px 0;
+}
+
+.child p {
+    margin: 5px 0;
+}
+
+.child img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

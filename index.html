@@ -10,30 +10,19 @@
 </head>
 <body>
     <header>
-        <h2>Happy Dogs!</h2>
+        <h2>Dog Show!</h2>
     </header>
 
-    <div class="dog-show">
-        <div class="card">
+    <div id="banner" class="dog-show">
+        <div id="child-div" class="card">
             <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
         </div> 
-        <div class="card">
-            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
-        </div>
-        <div class="card">
-            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
-        </div>
-        <div class="card">
-            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
-        </div>
-        <div class="card">
-            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
-        </div>            
+                 
     </div>
     <div id="dog-detail">
         <img class="detail-image" src="" alt="Insert Name Here">
         <h2 class="name">Insert Name Here</h2>
-        <h3 class="breed">Insert Breed Here</h3>
+        <h3 class="weight">Insert weight Here</h3>
     </div>
 
     <h3>Dog breed:</h3>
@@ -44,6 +33,16 @@
     <p id='weight-display'>
       Insert weight here
     </p>
+
+    <div>
+        <h1>Sort Dog Breeds</h1>
+        <label for="sortBy">Sort By: </label>
+        <select id="sortBy">
+            <option value="weight">Weight</option>
+            <option value="age">Age</option>
+        </select>
+        <div id="dogList"></div>
+    </div>
 
 
     <form id="new-dog">
