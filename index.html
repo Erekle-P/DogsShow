@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/style.css"></script>
+    <script defer src="/index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>Happy Dogs!</h2>
+    </header>
+
+    <div class="dog-show">
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
+        </div> 
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" alt="Image" />
+        </div>            
+    </div>
+    <div id="dog-detail">
+        <img class="detail-image" src="" alt="Insert Name Here">
+        <h2 class="name">Insert Name Here</h2>
+        <h3 class="breed">Insert Breed Here</h3>
+    </div>
+
+    <h3>Dog breed:</h3>
+    <p>
+      <span id='breed-display'>Insert breed here</span>
+    </p>
+    <h3>Weight:</h3>
+    <p id='weight-display'>
+      Insert weight here
+    </p>
+
+
+    <form id="new-dog">
+      <h4>Add New dog</h4>
+      <label for="new-dog-breed">Breed: </label>
+      <input type="text" name="breed" id="new-breed" />
+      <label for="new-weight">Weight: </label>
+      <input type="text" name="weight" id="new-weight" />
+      <label for="new-image">Image: </label>
+      <input type="text" name="image" id="new-image" />
+      <label for="new-life-span">Life Span: </label>
+      <input type="number" name="life-span" id="new-life-span" />
+      <label for="new-coat-type">Coat type: </label>
+      <textarea name="new-size" id="new-size"></textarea>
+      <input type="submit" id='submit-button' value="Create" />
+    </form>
+</body>
+</html>
