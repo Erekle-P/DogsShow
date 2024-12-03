@@ -2,8 +2,23 @@
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
-  }
-  
+}
+
+header {
+    width:100%;
+    background-color: #f7e561;
+    
+}
+body {
+    padding: 1rem;
+    text-align: center;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(252, 252, 202);
+}
 
 .dog-show {
     display: flex;
@@ -23,7 +38,7 @@
 }
 
 .dog-show:hover .card:not(:hover) {
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .card:hover {
@@ -33,104 +48,118 @@
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /
-}
-
-body {
-    padding: 1rem;
-    text-align: center;
-    background-color: #fafafa;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 234);
-}
-
-header {
-    padding: 0.5rem;
-    width: 100%;
-    color: white;
-    background-color: rgb(217, 162, 42);
-}
-
-
-form {
-    margin: 1rem 0;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  input,
-  textarea {
-    font-size: 1rem;
-    border: 1px solid black;
-    background-color: white;
-    padding: 0.5rem;
-    margin: 0.25rem 0;
-    width: 100%;
-    border-radius: 10px
-  }
-  
-  input[type="submit"] {
-    color: white;
-    border: 1px solid white;
-    background-color: rgb(237, 67, 215);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  input[type="submit"]:active {
-    background-color: rgb(42, 107, 147);
-  }
-  
-  form h4 {
-    width: 100%;
-    padding: 0.25rem;
-    margin: 0.5rem 0;
-    color: white;
-    background-color: rgb(21, 177, 57);
-  }
-  
-
-
-h1 {
-    text-align: center;
+    object-fit: cover; 
 }
 
 #sortBy {
+    background-color: #f5f7d9;
     padding: 5px;
     margin-left: 10px;
 }
 
-#dogList {
+#fixed-gif {
+    position: fixed; /* Keep it in a fixed position */
+    top: 310px; /* Set distance from the top */
+    left: 20px; /* Set distance from the left */
+    z-index: 10; /* Ensure it stays above other elements */
+    width: 150px; /* Adjust the size */
+    height: auto; /* Maintain aspect ratio */
+    pointer-events: none; /* Prevent interaction to avoid re-render issues */
+    animation: none; /* Ensure no conflicting animations are applied */
+}
+
+
+#fixed-gif img {
+    width: 100%; /* Ensure the image fits within the container */
+    border-radius: 10%; /* Optional styling for rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better appearance */
+   
+}
+
+
+#dog-detail {
+    width: 355px;
+    border-radius: 10%;
+    background-color: rgb(217, 234, 135);
+    color: rgb(13, 17, 81);
+    padding: 1rem; /* Add padding for spacing inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for a better look */
+    text-align: center; /* Center align the content */
+    margin: 1rem auto; /* Center the box on the page */
+}
+
+#dog-detail img {
+    max-width: 100%; 
+    border-radius: 10%; 
+    margin-bottom: 1rem; 
+}
+
+#dog-detail h3 {
+    font-size: 1.2rem; /* Make the text slightly larger */
+    line-height: 1.5; /* Improve readability */
+    margin: 0.5rem 0; /* Add spacing between each line */
+}
+
+#dog-detail span {
+    font-weight: bold; /* Highlight the dynamic content (like breed or weight) */
+    color: rgb(156, 5, 81); 
+}
+
+
+
+.sorted-dog-show {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.child {
-    width: 200px;
+.sorted-card {
+    width: 150px;
     margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f2c2c2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.child h3 {
-    margin: 10px 0;
-}
-
-.child p {
-    margin: 5px 0;
-}
-
-.child img {
+.sorted-card img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.sorted-card h4 {
+    font-size: 16px;
+    color: #aa4f28;
+    margin: 0;
+}
+
+h1, h2 {
+    color: #285caa;
+}
+
+
+button {
+    background-color: #d14ef2;
+    border-radius: 7%;
+    border: none;
+    color: rgb(99, 4, 4);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 
+    0 17px 50px 0 rgba(0,0,0,0.19);
 }

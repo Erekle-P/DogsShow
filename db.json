@@ -3,90 +3,90 @@
       {
         "id": 1,
         "breed": "Labrador Retriever",
-        "weight": "55-80 lbs",
+        "weight": "68 lbs",
         "image": "https://www.vidavetcare.com/wp-content/uploads/sites/234/2022/04/labrador-retriever-dog-breed-info.jpeg",
-        "lifespan": "10-12 years",
+        "lifespan": "12 years",
         "coat_type": "Short, dense, water-resistant",
         "size": "Large"
       },
       {
         "id": 2,
         "breed": "German Shepherd",
-        "weight": "50-90 lbs",
+        "weight": "70 lbs",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Berger_allemand_en_montagne_2.jpg/733px-Berger_allemand_en_montagne_2.jpg",
-        "lifespan": "9-13 years",
+        "lifespan": "13 years",
         "coat_type": "Double coat, medium-length",
         "size": "Large"
       },
       {
         "id": 3,
         "breed": "Golden Retriever",
-        "weight": "55-75 lbs",
+        "weight": "65 lbs",
         "image": "https://13630656.rocketcdn.me/wp-content/uploads/2020/01/Golden4.jpg.webp",
-        "lifespan": "10-12 years",
+        "lifespan": "12 years",
         "coat_type": "Long, wavy, water-repellent",
         "size": "Large"
       },
       {
         "id": 4,
         "breed": "Bulldog",
-        "weight": "40-50 lbs",
+        "weight": "45 lbs",
         "image": "https://image.petmd.com/files/inline-images/english-bulldog-5.jpg?VersionId=1KyTFgo4HZwpAcjf.WZ8mM_2yt6f9Zc3",
-        "lifespan": "8-10 years",
+        "lifespan": "10 years",
         "coat_type": "Short, smooth",
         "size": "Medium"
       },
       {
         "id": 5,
         "breed": "Poodle",
-        "weight": "40-70 lbs",
+        "weight": "50 lbs",
         "image": "https://image.petmd.com/files/inline-images/standard-poodle.jpg?VersionId=1Pjx5emdAPxmImIlwCR0tX3HXxxm_NhT",
-        "lifespan": "10-18 years",
+        "lifespan": "18 years",
         "coat_type": "Curly, dense",
         "size": "Large"
       },
       {
         "id": 6,
         "breed": "Beagle",
-        "weight": "20-30 lbs",
+        "weight": "25 lbs",
         "image": "https://www.animalbehaviorcollege.com/wp-content/uploads/2015/03/beagle.jpg",
-        "lifespan": "12-15 years",
+        "lifespan": "15 years",
         "coat_type": "Short, dense",
         "size": "Medium"
       },
       {
         "id": 7,
         "breed": "Rottweiler",
-        "weight": "80-135 lbs",
+        "weight": "100 lbs",
         "image": "https://www.trupanion.com/images/trupanionwebsitelibraries/pet-blogs/rottweiler-1-.jpg?sfvrsn=b53e3100_6",
-        "lifespan": "8-10 years",
+        "lifespan": "10 years",
         "coat_type": "Short, double coat",
         "size": "Large"
       },
       {
         "id": 8,
         "breed": "Dachshund",
-        "weight": "11-32 lbs",
+        "weight": "20 lbs",
         "image": " https://www.bil-jac.com/media/asrjipfe/dachshund-1153057966.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132167278130430000&format=webp&quality=80",
-        "lifespan": "12-16 years",
+        "lifespan": "16 years",
         "coat_type": "Smooth, wire-haired, or long-haired",
         "size": "Small"
       },
       {
         "id": 9,
         "breed": "Siberian Husky",
-        "weight": "35-60 lbs",
+        "weight": "48 lbs",
         "image": " https://www.pdsa.org.uk/media/7893/husky-gallery-outdoors-2-min.jpg?anchor=center&mode=crop&quality=100&height=500&bgcolor=fff&rnd=132179622130000000",
-        "lifespan": "12-14 years",
+        "lifespan": "14 years",
         "coat_type": "Thick, double coat",
         "size": "Medium"
       },
       {
         "id": 10,
         "breed": "Boxer",
-        "weight": "50-80 lbs",
+        "weight": "65 lbs",
         "image": "https://www.dogster.com/wp-content/uploads/2024/01/boxer-dog-walking-in-the-grass_Sue-Thatcher-Shutterstock.jpg",
-        "lifespan": "10-12 years",
+        "lifespan": "12 years",
         "coat_type": "Short, smooth",
         "size": "Large"
       }
