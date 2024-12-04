@@ -10,6 +10,9 @@ const detailSize = dogDetail.querySelector('#size-display');
 const sortBySelect = document.querySelector('#sortBy');
 const sortButton = document.querySelector('#sortButton');
 const sortedBanner = document.querySelector('#sortedBanner');
+const randomButton = document.querySelector('#randomButton');
+const randomDogContainer = document.querySelector('#randomDog');
+const loader = document.querySelector('#loader');
 
 // Fetch dog data from local server
 const fetchDogs = async () => {
@@ -56,43 +59,33 @@ const displayDogs = (dogs) => {
   }
 };
 
-// Function to create a sorted dog card
-const createSortedDogCard = (dog) => {
-  const cardDiv = document.createElement('div');
-  cardDiv.classList.add('sorted-card');
-  cardDiv.innerHTML = `
-    <img src="${dog.image}" alt="${dog.breed}" />
-    <h4>${dog.breed}</h4>
-  `;
-  return cardDiv;
+// Function to sort dogs by selected criteria (weight or age)
+const sortDogs = (dogs, criteria) => {
+  const sortedDogs = [...dogs];
+  sortedDogs.sort((a, b) => {
+    if (criteria === 'weight') {
+      return parseFloat(a.weight) - parseFloat(b.weight);
+    } else if (criteria === 'age') {
+      return parseFloat(a.lifespan) - parseFloat(b.lifespan);
+    }
+    return 0;
+  });
+  return sortedDogs;
 };
 
 // Function to display sorted dogs
 const displaySortedDogs = (dogs) => {
-  sortedBanner.innerHTML = ''; // Clear existing dogs
+  sortedBanner.innerHTML = '';
   dogs.forEach((dog) => {
-    const sortedCard = createSortedDogCard(dog);
-    sortedBanner.appendChild(sortedCard);
+    const cardDiv = document.createElement('div');
+    cardDiv.classList.add('sorted-card');
+    cardDiv.innerHTML = `
+      <img src="${dog.image}" alt="${dog.breed}" />
+      <h4>${dog.breed}</h4>
+    `;
+    sortedBanner.appendChild(cardDiv);
   });
 };
-
-// Function to sort dogs by selected criteria (weight or age)
-const sortDogs = (dogs, criteria) => {
-    const sortedDogs = [...dogs]; // Create a copy of the array to avoid mutating the original.
-    
-    sortedDogs.sort((a, b) => {
-      if (criteria === 'weight') {
-        // Extract numerical weight from the string and compare
-        return parseFloat(a.weight) - parseFloat(b.weight);
-      } else if (criteria === 'age') {
-        // Extract numerical lifespan from the string and compare
-        return parseFloat(a.lifespan) - parseFloat(b.lifespan);
-      }
-      return 0; // If no valid criteria, do not change the order.
-    });
-    
-    return sortedDogs; // Return the sorted array.
-  };
 
 // Function to handle the sorting form submission
 const handleSortSubmit = (dogs) => {
@@ -101,11 +94,30 @@ const handleSortSubmit = (dogs) => {
   displaySortedDogs(sortedDogs);
 };
 
+// Function to handle randomizer with loader effect
+const handleRandomizer = async (dogs) => {
+  loader.classList.remove('hidden'); // Show loader
+  randomDogContainer.innerHTML = ''; // Clear previous content
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate loading delay
+
+  const randomIndex = Math.floor(Math.random() * dogs.length);
+  const randomDog = dogs[randomIndex];
+
+  randomDogContainer.innerHTML = `
+    <img src="${randomDog.image}" alt="${randomDog.breed}" />
+    <h3>${randomDog.breed}</h3>
+
+    <p> Hi friend \u2764\uFE0F </p>
+  `;
+  loader.classList.add('hidden'); // Hide loader
+};
+
 // Initialize the app
 const initializeApp = async () => {
   const dogs = await fetchDogs();
   displayDogs(dogs);
   sortButton.addEventListener('click', () => handleSortSubmit(dogs));
+  randomButton.addEventListener('click', () => handleRandomizer(dogs));
 };
 
 // Start the application
